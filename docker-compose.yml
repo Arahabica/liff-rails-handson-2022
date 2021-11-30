@@ -1,0 +1,24 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - TZ="Asia/Tokyo"
+      - POSTGRES_INITDB_ARGS="--encoding=UTF-8"
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    #command: "tail -f /dev/null"
+    volumes:
+      - .:/myapp
+    environment:
+      - DB_PASSWORD=${DB_PASSWORD}
+    #  - LINE_CHANNEL_ID=${LINE_CHANNEL_ID}
+    #  - LIFF_ID=${LIFF_ID}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
