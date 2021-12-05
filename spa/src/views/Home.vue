@@ -1,24 +1,13 @@
 <template>
-  <button @click="handleLogout()">Logout</button>
+  <StampBoard />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { logout } from '@/api/auth'
-import router from '@/router'
+import StampBoard from '@/components/StampBoard.vue'
 
 export default defineComponent({
   name: 'Home',
-  setup () {
-    const handleLogout = () => {
-      logout().then(() => {
-        router.push('/about')
-      })
-    }
-    return {
-      handleLogout
-    }
-  }
+  components: { StampBoard }
 })
-console.log(process.env.VUE_APP_API_BASE)
 </script>
