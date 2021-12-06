@@ -64,4 +64,7 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
   config.filter_run_when_matching :focus
+  config.before(:suite) do
+    SeedFu.seed
+  end
 end
