@@ -22,7 +22,7 @@ import { login } from '@/api/auth'
 
 export default defineComponent({
   name: 'Home',
-  setup () {
+  setup (_, context) {
     const formData = reactive({
       email: '',
       password: ''
@@ -30,18 +30,19 @@ export default defineComponent({
 
     return {
       ...toRefs(formData),
-      handleLogin: async () => {
-        await login(formData.email, formData.password)
-          .then((res) => {
-            if (res?.status === 200) {
-              console.log(res)
-            } else {
-              alert('メールアドレスかパスワードが間違っています。')
-            }
-          })
-          .catch(() => {
-            alert('ログインに失敗しました。')
-          })
+      handleLogin: async (): Promise<void> => {
+        try {
+          const res = await login(formData.email, formData.password)
+          if (res?.status !== 200) {
+            alert('メールアドレスかパスワードが間違っています。')
+            return
+          }
+          console.log(res)
+          context.emit('login')
+          return
+        } catch (e) {
+          alert('ログインに失敗しました。')
+        }
       }
     }
   }

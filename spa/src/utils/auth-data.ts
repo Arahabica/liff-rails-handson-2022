@@ -1,8 +1,12 @@
 import { AuthHeaders } from '@/types/auth'
 
 export const getAuthDataFromStorage = (): AuthHeaders => {
+  const accessToken = localStorage.getItem('access-token')
+  if (!accessToken) {
+    throw new Error('Access token is not found.')
+  }
   return {
-    'access-token': localStorage.getItem('access-token'),
+    'access-token': accessToken,
     client: localStorage.getItem('client'),
     expiry: localStorage.getItem('expiry'),
     uid: localStorage.getItem('uid'),

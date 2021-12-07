@@ -5,76 +5,74 @@
     </div>
     <h1>鎌倉七福神巡り</h1>
     <div id="stamps-board">
-      <div class="god takarabune">
+      <div class="stamp takarabune">
         <div>
           <img src="images/irasutoya/takarabune.png" width="110" height="110"/>
         </div>
       </div>
-      <div v-for="god in gods" :key="god.id" class="god" :style="getGodPosition(god)">
-        <div v-if="false" class="name">{{god.name}}</div>
+      <div v-for="stamp in stamps" :key="stamp.id" class="stamp" :style="getStampPosition(stamp)">
         <div class="stamp-wrapper">
           <div class="stamp-back">
-            <img v-if="false" :src="god.image" width="110" height="110"/>
+            <img v-if="!stamp.imprinted" :src="stamp.back_image" width="110" height="110"/>
           </div>
-          <div v-if="god.stamp" class="stamp" :style="getGodStampStyle(god)">
-            <img :src="god.stamp" width="110" height="110"/>
+          <div v-if="stamp.imprinted" class="imprint" :style="getStampStampStyle(stamp)">
+            <img :src="stamp.front_image" width="110" height="110"/>
           </div>
         </div>
-        <div class="place" :style="getGodPlaceStyle(god)">{{god.name}}</div>
+        <div class="stamp-name" :style="getStampNameStyle(stamp)">{{stamp.name}}</div>
       </div>
       <div
-        v-if="newGod"
+        v-if="newStamp"
         v-show="showBigStamp"
-        class="stamp stamp-animation"
+        class="imprint imprint-animation"
         :style="style.stampAnimation"
         @click="pushStamp"
       >
-        <img :src="newGod.stamp" width="110" height="110"/>
+        <img :src="newStamp.front_image" width="110" height="110"/>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, PropType } from 'vue'
+import { defineComponent, ref, PropType, watch } from 'vue'
 import { Howl } from 'howler'
-import { God } from '@/types/god'
+import { Stamp } from '@/types/stamp'
 
 export default defineComponent({
   name: 'StampBoardPresent',
   props: {
-    gods: {
-      type: Object as PropType<Array<God>>,
+    stamps: {
+      type: Object as PropType<Array<Stamp>>,
       required: true
     },
-    newGod: {
-      type: Object as PropType<God | null>,
+    newStamp: {
+      type: Object as PropType<Stamp | null>,
       required: true
     }
   },
-  setup (props) {
+  setup (props, context) {
     const stampSound = new Howl({
       src: ['audio/kotsudumi.mp3']
     })
-    const getGodPosition = (god: God) => {
+    const getStampPosition = (stamp: Stamp) => {
       return {
-        top: god.position.y + 'px',
-        left: god.position.x + 'px'
+        top: stamp.position.y + 'px',
+        left: stamp.position.x + 'px'
       }
     }
-    const getGodStampStyle = (god: God) => {
+    const getStampStampStyle = (stamp: Stamp) => {
       return {
-        outline: `1px solid ${god.color}`
+        outline: `1px solid ${stamp.color}`
       }
     }
-    const getGodPlaceStyle = (god: God) => {
+    const getStampNameStyle = (stamp: Stamp) => {
       return {
-        color: god.color
+        color: stamp.color
       }
     }
-    const hasNewGod = Boolean(props.newGod)
-    const showOverlap = ref(hasNewGod)
-    const showBigStamp = ref(hasNewGod)
+    const showOverlap = ref(false)
+    const showBigStamp = ref(false)
     const style = ref({
       stampAnimation: {
         outline: '1px solid #000000',
@@ -83,31 +81,41 @@ export default defineComponent({
         transform: 'scale(3)'
       }
     })
-    if (props.newGod) {
-      style.value.stampAnimation.outline = `1px solid ${props.newGod.color}`
+    const syncNewStamp = (newStamp: Stamp) => {
+      const hasNewStamp = Boolean(newStamp)
+      showOverlap.value = hasNewStamp
+      showBigStamp.value = hasNewStamp
+      if (hasNewStamp) {
+        style.value.stampAnimation.outline = `1px solid ${newStamp.color}`
+      }
     }
+    syncNewStamp(props.newStamp)
     const pushStamp = () => {
-      const god = props.newGod as God
+      const stamp = props.newStamp as Stamp
       stampSound.play()
       style.value.stampAnimation = {
-        outline: `1px solid ${god.color}`,
-        // top: `${god.position.y + 27}.px`,
-        top: `${god.position.y}.px`,
-        left: `${god.position.x}.px`,
+        outline: `1px solid ${stamp.color}`,
+        top: `${stamp.position.y}.px`,
+        left: `${stamp.position.x}.px`,
         transform: 'scale(1)'
       }
       showOverlap.value = false
+      showBigStamp.value = true
       setTimeout(() => {
         showBigStamp.value = false
+        context.emit('pushed')
       }, 400)
     }
+    watch(() => props.newStamp, (newStamp: Stamp) => {
+      syncNewStamp(newStamp)
+    })
     return {
       style,
       showOverlap,
       showBigStamp,
-      getGodPosition,
-      getGodStampStyle,
-      getGodPlaceStyle,
+      getStampPosition,
+      getStampStampStyle,
+      getStampNameStyle,
       pushStamp
     }
   }
@@ -145,7 +153,7 @@ export default defineComponent({
   width: 350px
   height: 475px
   margin: 70px auto 0 auto
-  .god
+  .stamp
     width: 110px
     display: flex
     justify-content: center
@@ -167,13 +175,13 @@ export default defineComponent({
       img
         object-fit: contain
         filter: grayscale(100)
-    .place
+    .stamp-name
       text-align: center
       font-size: 12px
       font-weight: bold
       font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
 
-  .stamp
+  .imprint
     position: absolute
     width: 110px
     height: 110px
@@ -186,7 +194,7 @@ export default defineComponent({
     position: absolute
     top: 170px
     left: 120px
-  .stamp-animation
+  .imprint-animation
     position: absolute
     z-index: 3
     transition: 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000)
