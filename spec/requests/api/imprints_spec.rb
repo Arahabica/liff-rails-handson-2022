@@ -81,5 +81,24 @@ describe "/api/imprints", type: :request do
       imprints = Imprint.where(user_id: user_id, stamp_id: 2)
       expect(imprints.length).to be 1
     end
+    it '押印後のステータス確認' do
+      headers = get_auth_headers
+      [1,2,3].each do |stamp_id|
+        stamp = Stamp.find(stamp_id)
+        activation_key = stamp.activation_key
+        params = {
+          stamp_id: stamp_id,
+          activation_key: activation_key
+        }
+        post '/api/imprints/', params: params.to_json, headers: headers
+      end
+
+      get "/api/stamps", headers: headers
+      json = JSON.parse(response.body)
+      expect(response.status).to eq(200)
+      expect(json.filter{|t| t['imprinted']}.length).to be 3
+      expect(json.filter{|t| t['front_image'].present?}.length).to be 3
+      expect(json.filter{|t| t['front_image'].blank?}.length).to be 4
+    end
   end
 end

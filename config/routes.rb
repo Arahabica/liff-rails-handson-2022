@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       resources :imprints, only: [:create]
     end
   end
+  get '/hello', to: 'hello#index'
 end
