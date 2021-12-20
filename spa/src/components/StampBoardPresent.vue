@@ -137,7 +137,7 @@ export default defineComponent({
       } else if (imprintedCount < 7) {
         return `スタンプはあと${7 - imprintedCount}つです`
       } else {
-        return 'コンプリートおめでとう！'
+        return 'コンプリートおめでとう！ クーポンを送りました。'
       }
     })
     watch(() => props.newStamp, (newStamp: Stamp | null) => {

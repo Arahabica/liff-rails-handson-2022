@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
-import { login } from '@/api/auth'
+import api from '@/api/api'
 
 export default defineComponent({
   name: 'Home',
@@ -32,12 +32,11 @@ export default defineComponent({
       ...toRefs(formData),
       handleLogin: async (): Promise<void> => {
         try {
-          const res = await login(formData.email, formData.password)
+          const res = await api.login(formData.email, formData.password)
           if (res?.status !== 200) {
             alert('メールアドレスかパスワードが間違っています。')
             return
           }
-          console.log(res)
           context.emit('login')
           return
         } catch (e) {
