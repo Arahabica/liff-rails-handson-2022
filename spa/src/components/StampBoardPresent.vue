@@ -95,11 +95,12 @@ export default defineComponent({
       },
       stampAnimation: {
         outline: '1px solid #000000',
-        top: '155px',
+        top: '130px',
         left: '120px',
         transform: 'scale(3)',
         width: `${size}px`,
-        height: `${size}px`
+        height: `${size}px`,
+        borderRadius: `${size * 0.5}px`
       }
     })
     const syncNewStamp = (newStamp: Stamp | null) => {
@@ -116,25 +117,23 @@ export default defineComponent({
       stampSound.play()
       const index = props.stamps.findIndex(s => s.key === stamp.key)
       const position = getStampPosition(index)
-      style.value.stampAnimation = {
-        outline: `1px solid ${stamp.color}`,
-        top: position.top,
-        left: position.left,
-        transform: 'scale(1)',
-        width: `${size}px`,
-        height: `${size}px`
-      }
+      style.value.stampAnimation.outline = `1px solid ${stamp.color}`
+      style.value.stampAnimation.top = position.top
+      style.value.stampAnimation.left = position.left
+      style.value.stampAnimation.transform = 'scale(1)'
       showOverlap.value = false
       showBigStamp.value = true
       setTimeout(() => {
-        showBigStamp.value = false
         context.emit('pushed')
       }, 400)
+      setTimeout(() => {
+        showBigStamp.value = false
+      }, 1200)
     }
     const message = computed(() => {
       const imprintedCount = props.stamps.filter(stamp => stamp.imprinted).length
       if (imprintedCount === 0) {
-        return 'スタンプを7つ集めてクッキーをゲットしよう！'
+        return 'スタンプを7つ集めて クッキーをゲットしよう！'
       } else if (imprintedCount < 7) {
         return `スタンプはあと${7 - imprintedCount}つです`
       } else {
@@ -229,4 +228,5 @@ h3
   font-size: 20px
   font-weight: normal
   text-align: center
+  word-break: keep-all
 </style>

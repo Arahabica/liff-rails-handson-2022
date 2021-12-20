@@ -10,7 +10,7 @@
 <script lang="ts">
 import { PropType, ref, defineComponent } from 'vue'
 import { Stamp } from '@/types/stamp'
-import { getNewStamp, getStamps, pushStamp } from '@/api/stamps'
+import * as api from '@/api/stamps'
 import { buildStamp } from '@/utils/buildStamp'
 import Login from '@/components/Login.vue'
 import StampBoardPresent from '@/components/StampBoardPresent.vue'
@@ -34,26 +34,19 @@ export default defineComponent({
     const login = async () => {
       loggedIn.value = true
       if (props.newStampId) {
-        const newStampData = await getNewStamp(props.newStampId, props.activationKey)
+        const newStampData = await api.getNewStamp(props.newStampId, props.activationKey)
         newStamp.value = buildStamp(newStampData)
       }
-      const stampData = await getStamps()
+      const stampData = await api.getStamps()
       stamps.value = stampData.map(stamp => buildStamp(stamp))
     }
     const pushed = async () => {
-      const newStampValue = newStamp.value
-      if (!newStampValue) {
+      if (!newStamp.value) {
         throw new Error('new stamp is not found.')
       }
-      const index = stamps.value.findIndex(s => s.id === newStampValue.id)
-      stamps.value[index] = newStampValue
-      stamps.value[index].imprinted = true
-      try {
-        await pushStamp(newStampValue.id, props.activationKey)
-      } catch (e) {
-        stamps.value[index].front_image = ''
-        stamps.value[index].imprinted = false
-      }
+      await api.pushStamp(newStamp.value.id, props.activationKey)
+      const stampData = await api.getStamps()
+      stamps.value = stampData.map(stamp => buildStamp(stamp))
     }
     return {
       loggedIn,
