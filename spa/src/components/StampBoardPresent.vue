@@ -31,11 +31,12 @@
         <img :src="newStamp.front_image" :width="size" :height="size"/>
       </div>
     </div>
+    <h3>{{message}}</h3>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, PropType, watch } from 'vue'
+import { defineComponent, ref, PropType, watch, computed } from 'vue'
 import { Howl } from 'howler'
 import { Stamp } from '@/types/stamp'
 
@@ -59,8 +60,8 @@ export default defineComponent({
     const stampSound = new Howl({
       src: ['audio/kotsudumi.mp3']
     })
+    const center = [fullWidth * 0.5, r + size * 0.5]
     const getStampPosition = (index: number) => {
-      const center = [fullWidth * 0.5, r + size * 0.5]
       const result = []
       const rad = index / props.stamps.length * 2 * Math.PI
       const x = Math.round(center[0] + Math.sin(rad) * r - size * 0.5)
@@ -88,8 +89,8 @@ export default defineComponent({
     const showBigStamp = ref(false)
     const style = ref({
       center: {
-        top: `${r}px`,
-        left: `${fullWidth * 0.5 - size * 0.5}px`,
+        top: `${center[1] - size * 0.5}px`,
+        left: `${center[0] - size * 0.5}px`,
         width: `${size}px`
       },
       stampAnimation: {
@@ -130,12 +131,23 @@ export default defineComponent({
         context.emit('pushed')
       }, 400)
     }
+    const message = computed(() => {
+      const imprintedCount = props.stamps.filter(stamp => stamp.imprinted).length
+      if (imprintedCount === 0) {
+        return 'スタンプを7つ集めてクッキーをゲットしよう！'
+      } else if (imprintedCount < 7) {
+        return `スタンプはあと${7 - imprintedCount}つです`
+      } else {
+        return 'コンプリートおめでとう！'
+      }
+    })
     watch(() => props.newStamp, (newStamp: Stamp | null) => {
       syncNewStamp(newStamp)
     })
     return {
       style,
       size,
+      message,
       showOverlap,
       showBigStamp,
       getStampPosition,
@@ -176,8 +188,8 @@ export default defineComponent({
 #stamps-board
   position: relative
   width: 350px
-  height: 475px
-  margin: 70px auto 0 auto
+  height: 350px
+  margin: 35px auto 0 auto
   .stamp
     display: flex
     justify-content: center
@@ -212,4 +224,9 @@ export default defineComponent({
   .imprint-animation
     z-index: 3
     transition: 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000)
+h3
+  color: #666666
+  font-size: 20px
+  font-weight: normal
+  text-align: center
 </style>
