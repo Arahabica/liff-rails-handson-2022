@@ -13,7 +13,6 @@ export const buildStamp = (data: StampData): Stamp => {
     front_image: data.front_image || '',
     back_image: data.back_image || '',
     imprinted: data.imprinted,
-    color: presentation.color,
-    position: presentation.position
+    color: presentation.color
   }
 }

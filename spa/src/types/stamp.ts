@@ -10,10 +10,6 @@ export type StampData = {
 export type StampPresentation = {
   key: string;
   color: string;
-  position: {
-    x: number;
-    y: number;
-  }
 }
 
 export type Stamp = {
@@ -24,8 +20,4 @@ export type Stamp = {
   back_image: string;
   imprinted: boolean;
   color: string;
-  position: {
-    x: number;
-    y: number;
-  }
 }

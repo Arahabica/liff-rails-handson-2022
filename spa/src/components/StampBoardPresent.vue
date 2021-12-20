@@ -5,18 +5,18 @@
     </div>
     <h1>鎌倉七福神巡り</h1>
     <div id="stamps-board">
-      <div class="stamp takarabune">
+      <div class="stamp" :style="style.center">
         <div>
-          <img src="images/irasutoya/takarabune.png" width="110" height="110"/>
+          <img src="images/irasutoya/takarabune.png" :width="size" :height="size"/>
         </div>
       </div>
-      <div v-for="stamp in stamps" :key="stamp.id" class="stamp" :style="getStampPosition(stamp)">
-        <div class="stamp-wrapper">
+      <div v-for="(stamp, i) in stamps" :key="stamp.id" class="stamp" :style="getStampPosition(i)">
+        <div class="stamp-wrapper" :style="{ width: `${size}px`, height: `${size}px`}">
           <div class="stamp-back">
-            <img v-if="!stamp.imprinted" :src="stamp.back_image" width="110" height="110"/>
+            <img v-if="!stamp.imprinted" :src="stamp.back_image" :width="size" :height="size"/>
           </div>
-          <div v-if="stamp.imprinted" class="imprint" :style="getStampStampStyle(stamp)">
-            <img :src="stamp.front_image" width="110" height="110"/>
+          <div v-if="stamp.imprinted" class="imprint" :style="getStampStyle(stamp)">
+            <img :src="stamp.front_image" :width="size" :height="size"/>
           </div>
         </div>
         <div class="stamp-name" :style="getStampNameStyle(stamp)">{{stamp.name}}</div>
@@ -28,7 +28,7 @@
         :style="style.stampAnimation"
         @click="pushStamp"
       >
-        <img :src="newStamp.front_image" width="110" height="110"/>
+        <img :src="newStamp.front_image" :width="size" :height="size"/>
       </div>
     </div>
   </div>
@@ -38,6 +38,10 @@
 import { defineComponent, ref, PropType, watch } from 'vue'
 import { Howl } from 'howler'
 import { Stamp } from '@/types/stamp'
+
+const size = 88
+const r = 120
+const fullWidth = 350
 
 export default defineComponent({
   name: 'StampBoardPresent',
@@ -55,15 +59,24 @@ export default defineComponent({
     const stampSound = new Howl({
       src: ['audio/kotsudumi.mp3']
     })
-    const getStampPosition = (stamp: Stamp) => {
+    const getStampPosition = (index: number) => {
+      const center = [fullWidth * 0.5, r + size * 0.5]
+      const result = []
+      const rad = index / props.stamps.length * 2 * Math.PI
+      const x = Math.round(center[0] + Math.sin(rad) * r - size * 0.5)
+      const y = Math.round(center[1] + Math.cos(rad) * -r - size * 0.5)
       return {
-        top: stamp.position.y + 'px',
-        left: stamp.position.x + 'px'
+        width: `${size}px`,
+        top: `${y}px`,
+        left: `${x}px`
       }
     }
-    const getStampStampStyle = (stamp: Stamp) => {
+    const getStampStyle = (stamp: Stamp) => {
       return {
-        outline: `1px solid ${stamp.color}`
+        outline: `1px solid ${stamp.color}`,
+        width: `${size}px`,
+        height: `${size}px`,
+        borderRadius: `${size * 0.5}px`
       }
     }
     const getStampNameStyle = (stamp: Stamp) => {
@@ -74,11 +87,18 @@ export default defineComponent({
     const showOverlap = ref(false)
     const showBigStamp = ref(false)
     const style = ref({
+      center: {
+        top: `${r}px`,
+        left: `${fullWidth * 0.5 - size * 0.5}px`,
+        width: `${size}px`
+      },
       stampAnimation: {
         outline: '1px solid #000000',
         top: '155px',
         left: '120px',
-        transform: 'scale(3)'
+        transform: 'scale(3)',
+        width: `${size}px`,
+        height: `${size}px`
       }
     })
     const syncNewStamp = (newStamp: Stamp | null) => {
@@ -93,11 +113,15 @@ export default defineComponent({
     const pushStamp = () => {
       const stamp = props.newStamp as Stamp
       stampSound.play()
+      const index = props.stamps.findIndex(s => s.key === stamp.key)
+      const position = getStampPosition(index)
       style.value.stampAnimation = {
         outline: `1px solid ${stamp.color}`,
-        top: `${stamp.position.y}.px`,
-        left: `${stamp.position.x}.px`,
-        transform: 'scale(1)'
+        top: position.top,
+        left: position.left,
+        transform: 'scale(1)',
+        width: `${size}px`,
+        height: `${size}px`
       }
       showOverlap.value = false
       showBigStamp.value = true
@@ -111,10 +135,11 @@ export default defineComponent({
     })
     return {
       style,
+      size,
       showOverlap,
       showBigStamp,
       getStampPosition,
-      getStampStampStyle,
+      getStampStyle,
       getStampNameStyle,
       pushStamp
     }
@@ -154,7 +179,6 @@ export default defineComponent({
   height: 475px
   margin: 70px auto 0 auto
   .stamp
-    width: 110px
     display: flex
     justify-content: center
     // margin: 5px 0 5px 0
@@ -167,8 +191,6 @@ export default defineComponent({
 
     .stamp-wrapper
       position: relative
-      width: 110px
-      height: 110px
 
     .stamp-back
       position: absolute
@@ -177,25 +199,17 @@ export default defineComponent({
         filter: grayscale(100)
     .stamp-name
       text-align: center
-      font-size: 12px
+      font-size: 11px
       font-weight: bold
       font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
 
   .imprint
     position: absolute
-    width: 110px
-    height: 110px
-    border-radius: 55px
     overflow: hidden
     img
       object-fit: cover
 
-  .takarabune
-    position: absolute
-    top: 170px
-    left: 120px
   .imprint-animation
-    position: absolute
     z-index: 3
     transition: 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000)
 </style>
