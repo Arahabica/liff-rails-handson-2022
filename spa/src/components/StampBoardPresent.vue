@@ -81,11 +81,11 @@ export default defineComponent({
         transform: 'scale(3)'
       }
     })
-    const syncNewStamp = (newStamp: Stamp) => {
+    const syncNewStamp = (newStamp: Stamp | null) => {
       const hasNewStamp = Boolean(newStamp)
       showOverlap.value = hasNewStamp
       showBigStamp.value = hasNewStamp
-      if (hasNewStamp) {
+      if (newStamp) {
         style.value.stampAnimation.outline = `1px solid ${newStamp.color}`
       }
     }
@@ -106,7 +106,7 @@ export default defineComponent({
         context.emit('pushed')
       }, 400)
     }
-    watch(() => props.newStamp, (newStamp: Stamp) => {
+    watch(() => props.newStamp, (newStamp: Stamp | null) => {
       syncNewStamp(newStamp)
     })
     return {

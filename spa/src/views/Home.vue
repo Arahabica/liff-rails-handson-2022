@@ -13,9 +13,9 @@ import StampBoard from '@/components/StampBoard.vue'
 export default defineComponent({
   name: 'Home',
   components: { StampBoard },
-  setup() {
+  setup () {
     const route = useRoute()
-    const newStampId = route.query.sid || null
+    const newStampId = Number(route.query.sid || null)
     const activationKey = route.query.act_key || null
     return {
       newStampId,

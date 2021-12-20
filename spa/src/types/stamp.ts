@@ -1,5 +1,5 @@
 export type StampData = {
-  id: string;
+  id: number;
   key: string;
   name: string;
   front_image: string;
@@ -17,7 +17,7 @@ export type StampPresentation = {
 }
 
 export type Stamp = {
-  id: string;
+  id: number;
   key: string;
   name: string;
   front_image: string;

@@ -8,22 +8,22 @@
   />
 </template>
 <script lang="ts">
-import { PropType, ref, watchEffect } from 'vue'
-import { Stamp, StampPresentation } from '@/types/stamp'
+import { PropType, ref, defineComponent } from 'vue'
+import { Stamp } from '@/types/stamp'
 import { getNewStamp, getStamps, pushStamp } from '@/api/stamps'
 import { buildStamp } from '@/utils/buildStamp'
 import Login from '@/components/Login.vue'
 import StampBoardPresent from '@/components/StampBoardPresent.vue'
 
-export default {
+export default defineComponent({
   components: { StampBoardPresent, Login },
   props: {
     newStampId: {
-      type: String as PropType<string>,
+      type: Object as PropType<number>,
       required: true
     },
     activationKey: {
-      type: String as PropType<string>,
+      type: Object as PropType<string>,
       required: true
     }
   },
@@ -31,23 +31,25 @@ export default {
     const loggedIn = ref(false)
     const stamps = ref([] as Array<Stamp>)
     const newStamp = ref(null as Stamp | null)
-    const newStampId = props.newStampId
-    const activationKey = props.activationKey
     const login = async () => {
       loggedIn.value = true
-      if (newStampId) {
-        const newStampData = await getNewStamp(newStampId, activationKey)
+      if (props.newStampId) {
+        const newStampData = await getNewStamp(props.newStampId, props.activationKey)
         newStamp.value = buildStamp(newStampData)
       }
       const stampData = await getStamps()
       stamps.value = stampData.map(stamp => buildStamp(stamp))
     }
     const pushed = async () => {
-      const index = stamps.value.findIndex(s => s.id === newStamp.value.id)
-      stamps.value[index] = newStamp.value
+      const newStampValue = newStamp.value
+      if (!newStampValue) {
+        throw new Error('new stamp is not found.')
+      }
+      const index = stamps.value.findIndex(s => s.id === newStampValue.id)
+      stamps.value[index] = newStampValue
       stamps.value[index].imprinted = true
       try {
-        await pushStamp(newStamp.value.id, activationKey)
+        await pushStamp(newStampValue.id, props.activationKey)
       } catch (e) {
         stamps.value[index].front_image = ''
         stamps.value[index].imprinted = false
@@ -61,5 +63,5 @@ export default {
       stamps
     }
   }
-}
+})
 </script>
