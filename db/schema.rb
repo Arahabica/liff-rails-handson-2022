@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_12_05_131802) do
     t.string "back_image"
     t.string "front_image"
     t.string "activation_key"
+    t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
