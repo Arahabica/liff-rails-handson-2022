@@ -14,15 +14,19 @@ services:
     #command: "tail -f /dev/null"
     volumes:
       - .:/myapp
+      - public:/myapp/public
     environment:
       - DB_PASSWORD=${DB_PASSWORD}
       - LIFF_ID=${LIFF_ID}
       - LINE_CHANNEL_ID=${LINE_CHANNEL_ID}
       - LINE_CHANNEL_SECRET=${LINE_CHANNEL_SECRET}
       - LINE_CHANNEL_TOKEN=${LINE_CHANNEL_TOKEN}
+      - HOST=${HOST}
     ports:
       - "3000:3000"
       # for development
       - "8080:8080"
     depends_on:
       - db
+volumes:
+  public:
