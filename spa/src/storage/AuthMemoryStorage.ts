@@ -3,19 +3,19 @@ import { AuthData, IAuthStorage } from '@/types/auth'
 export default class AuthMemoryStorage implements IAuthStorage {
   data: AuthData | null;
 
-  constructor() {
+  constructor () {
     this.data = null
   }
 
-  get(): AuthData | null {
+  get (): AuthData | null {
     return this.data
   }
 
-  set(headers: AuthData): void {
+  set (headers: AuthData): void {
     this.data = headers
   }
 
-  clear(): void {
+  clear (): void {
     this.data = null
   }
 }

@@ -16,9 +16,13 @@ services:
       - .:/myapp
     environment:
       - DB_PASSWORD=${DB_PASSWORD}
-    #  - LINE_CHANNEL_ID=${LINE_CHANNEL_ID}
-    #  - LIFF_ID=${LIFF_ID}
+      - LIFF_ID=${LIFF_ID}
+      - LINE_CHANNEL_ID=${LINE_CHANNEL_ID}
+      - LINE_CHANNEL_SECRET=${LINE_CHANNEL_SECRET}
+      - LINE_CHANNEL_TOKEN=${LINE_CHANNEL_TOKEN}
     ports:
       - "3000:3000"
+      # for development
+      - "8080:8080"
     depends_on:
       - db

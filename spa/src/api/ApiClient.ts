@@ -14,8 +14,24 @@ export default class ApiClient {
     this.client = axios.create({ baseURL })
   }
 
-  async login (email: string, password: string): Promise<AxiosResponse<User>|undefined> {
-    return await this.client.post<User>('/api/auth/sign_in', { email, password })
+  async getLiffId (): Promise<string> {
+    const res = await this.client.get<{liffId: string}>('/api/config/liff_id')
+    return res.data.liffId
+  }
+
+  async signUp (userId: string, accessToken: string): Promise<AxiosResponse<User>|undefined> {
+    return await this.client.post<User>('/api/auth', { uid: userId, access_token: accessToken })
+      .then((res: AxiosResponse<User>) => {
+        this.authStorage.set(res.headers as AuthData)
+        return res
+      })
+      .catch((err: AxiosError) => {
+        return err.response
+      })
+  }
+
+  async signIn (userId: string, accessToken: string): Promise<AxiosResponse<User>|undefined> {
+    return await this.client.post<User>('/api/auth/sign_in', { uid: userId, access_token: accessToken })
       .then((res: AxiosResponse<User>) => {
         this.authStorage.set(res.headers as AuthData)
         return res

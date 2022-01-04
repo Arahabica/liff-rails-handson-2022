@@ -952,6 +952,460 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
+"@liff/add-to-home-screen@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/add-to-home-screen/-/add-to-home-screen-2.18.1.tgz#d6bd1432b28596f576b67a5eb811fdfa8c9bb455"
+  integrity sha512-3BkNbX2A4QK2DX+0UdoAVoOeW1AZEANs5u+K60oIlTVaSnvFc+oxuDM41Gwanza1bSTe0S9WvWUrLyWJu+orWw==
+  dependencies:
+    "@liff/check-availability" "2.18.1"
+    "@liff/consts" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/is-sub-window" "2.18.1"
+    "@liff/native-bridge" "2.18.1"
+    "@liff/open-window" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/analytics@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/analytics/-/analytics-2.18.1.tgz#222eb3adae75b10f5a36ca3f61848258548a0b72"
+  integrity sha512-j8vvYjodC0iDAJL5i6jIXvGa3Iyml1rNAJB0ihZ+7VQi1KNf+iAz6iMkKOsIQ+vlh7kLJI+26rF24or5+0Qj9g==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/get-profile" "2.18.1"
+    "@liff/get-version" "2.18.1"
+    "@liff/is-logged-in" "2.18.1"
+    "@liff/logger" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/types" "2.18.1"
+    "@liff/use" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/check-availability@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/check-availability/-/check-availability-2.18.1.tgz#6cf5df08c668c32c39c29c816b1817deabfea222"
+  integrity sha512-cPmn/NT2b6qTToC0H5DHdUHT8QC3xBbTa8TOPK68qx46CS2SIKq06lsem7CSIqCjOEUKU8j4Eoq/ox0jqeT0hQ==
+  dependencies:
+    "@liff/get-version" "2.18.1"
+    "@liff/is-api-available" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/close-window@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/close-window/-/close-window-2.18.1.tgz#d90153fc91a33d4c89ffa5601e6f96b323527e7b"
+  integrity sha512-erOWbZ96bo/RtZH6gk5M3LiUnTgE6wqV2ziWyMdVhnu4WVXKOo0IExYLPvSkwWnsqrWu0fmYGIz7xmOEnviZ7Q==
+  dependencies:
+    "@liff/get-line-version" "2.18.1"
+    "@liff/get-os" "2.18.1"
+    "@liff/native-bridge" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/consts@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/consts/-/consts-2.18.1.tgz#a9f1728cbb881559441ae670e044cf27c826d182"
+  integrity sha512-6Xl1slGj3zLG6tPsnaBIb6d+8/DUvbvnYoYv7eEgsh8YEiVBOwP3zGUt8Y7zJ3M9BgCmOn/1lXv9Zl73FGbMog==
+
+"@liff/extensions@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/extensions/-/extensions-2.18.1.tgz#06ddfcc8291ae97e074d4f607c5bbe9f3b304781"
+  integrity sha512-gBHaB9Owrc6+J1wKa1pfWJaD+ZhrdFVJCVGgaCNTh7CN7lly6N2x2RKIe3REyJtF37FmxsoAvY/z3Iz3WvL3OQ==
+  dependencies:
+    "@liff/add-to-home-screen" "2.18.1"
+    "@liff/check-availability" "2.18.1"
+    "@liff/consts" "2.18.1"
+    "@liff/get-advertising-id" "2.18.1"
+    "@liff/get-line-version" "2.18.1"
+    "@liff/get-os" "2.18.1"
+    "@liff/logger" "2.18.1"
+    "@liff/scan-code" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/get-advertising-id@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/get-advertising-id/-/get-advertising-id-2.18.1.tgz#065780ee444f1c2555cb7a12664ce582f4fd86c2"
+  integrity sha512-dbIAzV9plFWVE6kk7XoRncZp/+yJE2N0TKVOLmXlfW1s2Tr2t1DcT27g05IeRv3W6JPx811Ziv0TOi9wUS0o7w==
+  dependencies:
+    "@liff/check-availability" "2.18.1"
+    "@liff/consts" "2.18.1"
+    "@liff/native-bridge" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/get-friendship@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/get-friendship/-/get-friendship-2.18.1.tgz#01e78203df2a25b06adbdeb9cbc8b01d77386c56"
+  integrity sha512-ON9qT7LPIgrbiow80BY/nVGrDXVgfBsr47bC02irCjW64lQFt7nCip2jy78qd//pTgdSMflUd+SaAyM45Kx1hQ==
+  dependencies:
+    "@liff/server-api" "2.18.1"
+
+"@liff/get-language@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/get-language/-/get-language-2.18.1.tgz#a5b9b16cad74d53353766e1f5fbc50db75296e82"
+  integrity sha512-ItICPUf8sff1lT0gfAH411stQAdzC2zUrtj3CyTYguig9W+5zrIztp/fkCexN/FKbuxTBA9oOIA0Bv93B4x+Jg==
+
+"@liff/get-line-version@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/get-line-version/-/get-line-version-2.18.1.tgz#b4691bae5a22051db3f9a00a0a7ae80e12500ab6"
+  integrity sha512-h0zr6hrX7m47bLqsxdoahYMx44SCO8cnWVdzBpU7QVcV61eZ9ytSrUivk5dZnEtvdWfKk0ocGSL4xTx6jVqJIA==
+
+"@liff/get-os@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/get-os/-/get-os-2.18.1.tgz#790829a321ad89a0ea3f82261387229fb5ea3755"
+  integrity sha512-0ISb25TF6H1k1CX3i28pu5oIwIo7F7cZZ8xNmj9YPeXy27uD2DfphSfcVuD5OlyXRF2Patz6RmkGS40+lzWTKQ==
+
+"@liff/get-profile@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/get-profile/-/get-profile-2.18.1.tgz#af1048c20e48e2e41664711bdedaaa69151da807"
+  integrity sha512-6fmrNQVYlZvE5vKxx1E4Z+mg+af7VqAWEHcM4c9lj+81GKQYKPw+dYUD9G7/p0To7c15AiF899Je/bGb/8okdw==
+  dependencies:
+    "@liff/server-api" "2.18.1"
+
+"@liff/get-version@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/get-version/-/get-version-2.18.1.tgz#0ff694d42ed033dcb849571f0a3993d6619785fc"
+  integrity sha512-T12ea/fr6c29I/izDqKj9JQruHu94RBXckYFpVoTYGv+z/rrQsHAAniuaH7qTjw4O5Fo+2BbX5LW7ot6U2lI4A==
+
+"@liff/init@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/init/-/init-2.18.1.tgz#a6e07a9710af248edb2ce27c0bd76fe3a65be268"
+  integrity sha512-LmzK1PROTYRzrhPuzaWeWGcU/lC71ICWWIhqVFKqKMSOipiiFe+08ILBeRdlfw3kgS67oZWvA5aWEvjxtH9QtQ==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/extensions" "2.18.1"
+    "@liff/get-line-version" "2.18.1"
+    "@liff/get-os" "2.18.1"
+    "@liff/is-api-available" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/is-logged-in" "2.18.1"
+    "@liff/is-sub-window" "2.18.1"
+    "@liff/logger" "2.18.1"
+    "@liff/login" "2.18.1"
+    "@liff/logout" "2.18.1"
+    "@liff/native-bridge" "2.18.1"
+    "@liff/ready" "2.18.1"
+    "@liff/server-api" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/sub-window" "2.18.1"
+    "@liff/types" "2.18.1"
+    "@liff/use" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/is-api-available@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/is-api-available/-/is-api-available-2.18.1.tgz#0c4d571837c9ebcd6f243e4d89254ad6d4112a3a"
+  integrity sha512-tPuFvEwzbZNE/1HewWS73mUHoH5NwaSgO6dfhOi+ZnvW0dckPoT7HGsxIlj4LhDes1X7YQAvUi4e0kUUiVeqSQ==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/get-line-version" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/is-logged-in" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/is-in-client@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/is-in-client/-/is-in-client-2.18.1.tgz#941b2270f3d46b8bbfea001e76903b62ae39e39b"
+  integrity sha512-MpoDIr4yV265Sizc954Rz6txKp12P9enNjwQVhGPFAzk2zR6OyZ7xanVGtGvJXj3br/V5qv9YpZWMQ8HEKW7Dg==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/is-logged-in@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/is-logged-in/-/is-logged-in-2.18.1.tgz#13e914a2b233842bdcffdf52a6ba4ff84b72dd92"
+  integrity sha512-hA2bqS9Q/sMPL8RMxKhf9WuMVBWR5C5rhvs5Fc7GGzctirNGQpu1uGWr4DV53cIH6TyDlL6PgdSCzyaoiJf9fA==
+  dependencies:
+    "@liff/store" "2.18.1"
+
+"@liff/is-sub-window@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/is-sub-window/-/is-sub-window-2.18.1.tgz#b0e92d94bd06627b1cbd0384265e83feea092590"
+  integrity sha512-WeDXIup7bZYPPjSE0wUH4J6iFSJDjbK3sRJoMPZy28DNNMHovHTKSr3tsP3KW5VkDaVfrLK7TsCvbWydEFoxbg==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/use" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/liff-types@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/liff-types/-/liff-types-2.18.1.tgz#4c7b3e4ac8098f8064203aa08efcff207863fb4f"
+  integrity sha512-GiGTX+HH9mTLRCwxiTxKhJdHBFf5+4B5w+5dhdzUsAx9qO+Wsy9Tg2t1C+AxLvpG1zWlNr7MP5qkVC60T6/lTg==
+  dependencies:
+    "@liff/analytics" "2.18.1"
+    "@liff/close-window" "2.18.1"
+    "@liff/get-friendship" "2.18.1"
+    "@liff/get-language" "2.18.1"
+    "@liff/get-line-version" "2.18.1"
+    "@liff/get-os" "2.18.1"
+    "@liff/get-profile" "2.18.1"
+    "@liff/get-version" "2.18.1"
+    "@liff/init" "2.18.1"
+    "@liff/is-api-available" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/is-logged-in" "2.18.1"
+    "@liff/is-sub-window" "2.18.1"
+    "@liff/login" "2.18.1"
+    "@liff/logout" "2.18.1"
+    "@liff/native-bridge" "2.18.1"
+    "@liff/open-window" "2.18.1"
+    "@liff/permanent-link" "2.18.1"
+    "@liff/permission" "2.18.1"
+    "@liff/ready" "2.18.1"
+    "@liff/scan-code-v2" "2.18.1"
+    "@liff/send-messages" "2.18.1"
+    "@liff/share-target-picker" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/sub-window" "2.18.1"
+    "@liff/use" "2.18.1"
+
+"@liff/logger@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/logger/-/logger-2.18.1.tgz#506ac448f346b9269b261a6130e6f998a7f6e9ee"
+  integrity sha512-dxkZg7CCc9ub9qy5pERPAj87Q+pWPSV9nvhBynTZIeTVrtteWkUaTDeUTDu/S7e5S8ka9g1l7nPZYoOHW++PLg==
+
+"@liff/login@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/login/-/login-2.18.1.tgz#6a1b9f080fd9a7660e31438bbe93ed457df73635"
+  integrity sha512-hZJBkjvImzq67sEKKa74bVV7AYp/CzVf7e09eP+frxXyMUh2lgWt4Zv3w938wDZy8vChaPOOv3kArbNvjIEEbA==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/get-version" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/is-sub-window" "2.18.1"
+    "@liff/logger" "2.18.1"
+    "@liff/server-api" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/use" "2.18.1"
+    "@liff/util" "2.18.1"
+    tiny-sha256 "^1.0.2"
+
+"@liff/logout@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/logout/-/logout-2.18.1.tgz#09be6b3263c4555334daecfdb3b0709950d92027"
+  integrity sha512-M4xHPsPqiIn01RGB8VTCCiO8Z/8Ekl4RosMLXmx7+IS90DD0S+6aEn8Xkrl56urf0WLyNup+m2QCQRuoeziXSw==
+  dependencies:
+    "@liff/store" "2.18.1"
+
+"@liff/native-bridge@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/native-bridge/-/native-bridge-2.18.1.tgz#bdaf32192ce4a9cc0d3adc8aab8f5cdbae1a8d12"
+  integrity sha512-W4TTWQQ8CGMXj2BC0ewIYmoXe4PAIPIx3AP6J4zopxkNswHmWzyRogf3TBX8tLINHvDO5lGKAbIWHDMYPLYAug==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/logger" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/open-window@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/open-window/-/open-window-2.18.1.tgz#5cd132bf712ff430279fd29ecd9b189ae7fd999b"
+  integrity sha512-5UXwCGb26VS3O274YFP9dlNI32YNWW3ofzdcovnMYiO4/C7lEr3SOpWrYA1/GeeaVN5/sCdA6pkVPu5R+HJLdg==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/get-line-version" "2.18.1"
+    "@liff/get-os" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/native-bridge" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/permanent-link@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/permanent-link/-/permanent-link-2.18.1.tgz#28ec77c7c73ff0d21d4c2dce29264d403052287d"
+  integrity sha512-gR6E0v/gmb2c6d6Xl4RJDIu2FMPJkQjFux5qh2hyUfIS1YHtJJkO93L0etuvXS2olPa9+Z59IW4+AiskGdpciw==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/server-api" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/use" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/permission@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/permission/-/permission-2.18.1.tgz#a6bbb00b9f2a3456aa8a3ec9252ae0c4177ff8e2"
+  integrity sha512-WR+27dav3Addhr5oDfAPOzai3I3PfgamxyeEkzaCPmWzMyFbb18oSls4J0/l2RvVICBCXdgm8b5y94KvGl0VXw==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/server-api" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/sub-window" "2.18.1"
+    "@liff/use" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/ready@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/ready/-/ready-2.18.1.tgz#bcd9383b31a345d88ba1cb01f2e97b13638cd0f9"
+  integrity sha512-VHToTwA11L3eZ/Z9yptwwlxJQx81DxYJldKnDSPZW7sUP4etDOqAEqdeEZGPIkyP+s9KW3ijpkzOx48dpmUdqA==
+
+"@liff/scan-code-v2@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/scan-code-v2/-/scan-code-v2-2.18.1.tgz#9938031cd9b46432b0f2c76361f7cddaa36e0e44"
+  integrity sha512-jGG9HaFITsyYLDJpJmPYy8D2NbT9aWt1MalnSru7S4DMc27jUb2CzlLXzHGSIpNdlGNRld7VpZJBD04zY6TiNg==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/is-api-available" "2.18.1"
+    "@liff/sub-window" "2.18.1"
+    "@liff/use" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/scan-code@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/scan-code/-/scan-code-2.18.1.tgz#672ed711eda2e3c36e1d8d21f03cb6a44fa8be93"
+  integrity sha512-DH8yDX4CDzV3+3jOG+paEyh5scng1V0oBZU9wJ9f04K4ijRvBmqg1t/LBzOSsVcU/GyJIQZnE6r4gmdjZ5VyGA==
+  dependencies:
+    "@liff/check-availability" "2.18.1"
+    "@liff/consts" "2.18.1"
+    "@liff/native-bridge" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/send-messages@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/send-messages/-/send-messages-2.18.1.tgz#cfe9c6b35eb3c4e970a88cd3ccc7b4f08f4eeda2"
+  integrity sha512-VYQuHa7njKygHcAH5ZB1ccQLOyJ0DtMfUGkJmQFU5ZHRe9aXC/H40il2Mg35ZkDBziHownrdwcd8Yp+waepy5g==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/server-api" "2.18.1"
+    "@liff/util" "2.18.1"
+    "@line/bot-sdk" "^7.0.0"
+
+"@liff/server-api@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/server-api/-/server-api-2.18.1.tgz#8488c04156895294635d5e23af5a52fe494afe20"
+  integrity sha512-zruRs+SCRFgPRV1Ts9XBz+ibzM82cjTjrgZ7C7Ce5nsIogoka3YkjrvSt2vr5qyS18w1oaoLfr4AfRt+fKjIjw==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/share-target-picker@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/share-target-picker/-/share-target-picker-2.18.1.tgz#2bde6afa7c5a772ec5c9482cea9badf613979b14"
+  integrity sha512-xyeAaLMgm0WFGyuFVQ/H3g4gZrmK0dfoRCLtn6SMHdW+JnThbbMsgVfxJUJhZFft+z0EK+h1n0GdzwIc5M/gTQ==
+  dependencies:
+    "@liff/analytics" "2.18.1"
+    "@liff/consts" "2.18.1"
+    "@liff/get-line-version" "2.18.1"
+    "@liff/get-os" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/is-logged-in" "2.18.1"
+    "@liff/is-sub-window" "2.18.1"
+    "@liff/logger" "2.18.1"
+    "@liff/send-messages" "2.18.1"
+    "@liff/server-api" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/types" "2.18.1"
+    "@liff/use" "2.18.1"
+    "@liff/util" "2.18.1"
+    "@liff/window-postmessage" "2.18.1"
+
+"@liff/store@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/store/-/store-2.18.1.tgz#8774b16fa6afa959f435fbd9c149d5b6ffe0eb68"
+  integrity sha512-Meob1ri2PT/6DUuzvbTTFhd7Q/qykXnKCu7KWosSD0WpJnecTPG2yaN5DIe2FCBZ0LaoJmR3eDHd3AB+Vgldpg==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/types" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/sub-window@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/sub-window/-/sub-window-2.18.1.tgz#c3cbbadec55b06b745eb2dad08f3f84847307031"
+  integrity sha512-Z/mSAXQEv5FBdrWrqCwPvOR1CljzAnOvMzqqfJGrALmuByvsWuvCaKefUzJJqimWOr+Gb9kJABnRcWnk+pZqmw==
+  dependencies:
+    "@liff/close-window" "2.18.1"
+    "@liff/consts" "2.18.1"
+    "@liff/get-os" "2.18.1"
+    "@liff/is-api-available" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/is-sub-window" "2.18.1"
+    "@liff/logger" "2.18.1"
+    "@liff/server-api" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@liff/types@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/types/-/types-2.18.1.tgz#70960eef18dd81da6002592d2f524114f87eaf65"
+  integrity sha512-zflN7kwK2EKAxALkpOSodAh3rswTg1fk2Vx+09HYFRkfLiU3IZIq/IcSIjC5gH7ZBn1Yaa9a1pJBB/rN2sz+xg==
+
+"@liff/use@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/use/-/use-2.18.1.tgz#5274cfb91b92ea085d5a1915960dd04d603a6722"
+  integrity sha512-ZdJEQX1FPVKxIqz87q8vIzLFgnplVYYU2H8Hpt4H8hOL2OD7nk44Ll56jjN2D/DbE3lSiwpcYFp7JZOHhppVEw==
+  dependencies:
+    "@liff/logger" "2.18.1"
+
+"@liff/util@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/util/-/util-2.18.1.tgz#fb699cfe32af2137e29213a489c80772025e7b62"
+  integrity sha512-r2EP8EQ88en8PIBs38fDLCxKWYnzzPwz96WKAkXoi/gJoyt1YuWzjGoNSlUjVoP+L9Bhbc13VbMT883lvpLiew==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/logger" "2.18.1"
+
+"@liff/window-postmessage@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@liff/window-postmessage/-/window-postmessage-2.18.1.tgz#6f0979f1a0a574e665a3eb5c6bd9962b0a92c2bb"
+  integrity sha512-d/NN0GnK8OqDtWzOyeiGX7n9a/7J6lPz8hBOtS6ih7G+H/NfFrMGSsJ2AbkgVDG/sCnU8u/n+PYh3jGjUAzlFQ==
+  dependencies:
+    "@liff/consts" "2.18.1"
+    "@liff/logger" "2.18.1"
+    "@liff/util" "2.18.1"
+
+"@line/bot-sdk@^7.0.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@line/bot-sdk/-/bot-sdk-7.4.0.tgz#c657fed7fb3eec42f0c352dd5278c953bf0d49d0"
+  integrity sha512-MNnE9Ew/NRhZIvSchWRaStJGVDcPIGhG7tiZ5Oz3DO+KOgbUffS1Pn+j4aatcBcULLysv0fgp2anIllc+N+hmA==
+  dependencies:
+    "@types/body-parser" "^1.19.0"
+    "@types/node" "^14.10.0"
+    axios "^0.21.1"
+    body-parser "^1.19.0"
+    file-type "^15.0.0"
+    form-data "^3.0.0"
+
+"@line/liff@^2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@line/liff/-/liff-2.18.1.tgz#f850b6e108732c5dd5b70d854d60b3c412399aeb"
+  integrity sha512-buz4t2XGWQFg65hSRrKRQShv7uIreyubnhs/wyx8ryQyRjMarsrmaJ30pt9Ui0awhMsQKyNF46rlcGg2/D+SaQ==
+  dependencies:
+    "@liff/analytics" "2.18.1"
+    "@liff/close-window" "2.18.1"
+    "@liff/consts" "2.18.1"
+    "@liff/extensions" "2.18.1"
+    "@liff/get-friendship" "2.18.1"
+    "@liff/get-language" "2.18.1"
+    "@liff/get-line-version" "2.18.1"
+    "@liff/get-os" "2.18.1"
+    "@liff/get-profile" "2.18.1"
+    "@liff/get-version" "2.18.1"
+    "@liff/init" "2.18.1"
+    "@liff/is-api-available" "2.18.1"
+    "@liff/is-in-client" "2.18.1"
+    "@liff/is-logged-in" "2.18.1"
+    "@liff/is-sub-window" "2.18.1"
+    "@liff/liff-types" "2.18.1"
+    "@liff/login" "2.18.1"
+    "@liff/logout" "2.18.1"
+    "@liff/native-bridge" "2.18.1"
+    "@liff/open-window" "2.18.1"
+    "@liff/permanent-link" "2.18.1"
+    "@liff/permission" "2.18.1"
+    "@liff/ready" "2.18.1"
+    "@liff/scan-code-v2" "2.18.1"
+    "@liff/send-messages" "2.18.1"
+    "@liff/server-api" "2.18.1"
+    "@liff/share-target-picker" "2.18.1"
+    "@liff/store" "2.18.1"
+    "@liff/sub-window" "2.18.1"
+    "@liff/use" "2.18.1"
+    "@liff/util" "2.18.1"
+    promise-polyfill "^8.1.3"
+    tslib "^2.3.0"
+    whatwg-fetch "^3.0.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -1001,7 +1455,17 @@
   resolved "https://registry.yarnpkg.com/@soda/get-current-script/-/get-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha512-T7VNNlYVM1SgQ+VsMYhnDkcGmWhQdL0bDyGm5TlQ3GBXnJscEClUUOKduWTmm2zCnvNLC1hc3JpuXjs/nFOc5w==
 
-"@types/body-parser@*":
+"@tokenizer/token@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@tokenizer/token/-/token-0.1.1.tgz#f0d92c12f87079ddfd1b29f614758b9696bc29e3"
+  integrity sha512-XO6INPbZCxdprl+9qa/AAbFFOMzzwqYxpjPgLICrMD6C2FCw6qfJOPcBk6JqqPLSaZ/Qx87qn4rpPmPMwaAK6w==
+
+"@tokenizer/token@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@tokenizer/token/-/token-0.3.0.tgz#fe98a93fe789247e998c75e74e9c7c63217aa276"
+  integrity sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==
+
+"@types/body-parser@*", "@types/body-parser@^1.19.0":
   version "1.19.2"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.2.tgz#aea2059e28b7658639081347ac4fab3de166e6f0"
   integrity sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==
@@ -1092,6 +1556,11 @@
   version "16.11.11"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.11.tgz#6ea7342dfb379ea1210835bada87b3c512120234"
   integrity sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==
+
+"@types/node@^14.10.0":
+  version "14.18.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.3.tgz#b3682cfd9d5542b025df13233d073cb4347f63f3"
+  integrity sha512-GtTH2crF4MtOIrrAa+jgTV9JX/PfoUCYr6MiZw7O/dkZu5b6gm5dc1nAL0jwGo4ortSBBtGyeVaxdC8X6V+pLg==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -2119,6 +2588,13 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
+axios@^0.21.1:
+  version "0.21.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
+  dependencies:
+    follow-redirects "^1.14.0"
+
 axios@^0.24.0:
   version "0.24.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.24.0.tgz#804e6fa1e4b9c5288501dd9dff56a7a0940d20d6"
@@ -2278,6 +2754,22 @@ body-parser@1.19.0:
     qs "6.7.0"
     raw-body "2.4.0"
     type-is "~1.6.17"
+
+body-parser@^1.19.0:
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.1.tgz#1499abbaa9274af3ecc9f6f10396c995943e31d4"
+  integrity sha512-8ljfQi5eBk8EJfECMrgqNGWPEY5jWP+1IzkzkGdFFEwFQZZyaZ21UqdaHktgiMlH0xLHqIFtE/u2OYE5dOtViA==
+  dependencies:
+    bytes "3.1.1"
+    content-type "~1.0.4"
+    debug "2.6.9"
+    depd "~1.1.2"
+    http-errors "1.8.1"
+    iconv-lite "0.4.24"
+    on-finished "~2.3.0"
+    qs "6.9.6"
+    raw-body "2.4.2"
+    type-is "~1.6.18"
 
 bonjour@^3.5.0:
   version "3.5.0"
@@ -2452,6 +2944,11 @@ bytes@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
+
+bytes@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.1.tgz#3f018291cb4cbad9accb6e6970bca9c8889e879a"
+  integrity sha512-dWe4nWO/ruEOY7HkUJ5gFt1DCFV9zPRoJr8pV0/ASQermOZjtq8jMjOprC0Kd10GLN+l7xaUPvxzJFWtxGu8Fg==
 
 cacache@^12.0.2, cacache@^12.0.3:
   version "12.0.4"
@@ -2844,7 +3341,7 @@ color@^3.0.0:
     color-convert "^1.9.3"
     color-string "^1.6.0"
 
-combined-stream@^1.0.6, combined-stream@~1.0.6:
+combined-stream@^1.0.6, combined-stream@^1.0.8, combined-stream@~1.0.6:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"
   integrity sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
@@ -4277,6 +4774,16 @@ file-loader@^4.2.0:
     loader-utils "^1.2.3"
     schema-utils "^2.5.0"
 
+file-type@^15.0.0:
+  version "15.0.1"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-15.0.1.tgz#54175484953d48b970c095ba8737d4e0c3a9b407"
+  integrity sha512-0LieQlSA3bWUdErNrxzxfI4rhsvNAVPBO06R8pTc1hp9SE6nhqlVyvhcaXoMmtXkBTPnQenbMPLW9X76hH76oQ==
+  dependencies:
+    readable-web-to-node-stream "^2.0.0"
+    strtok3 "^6.0.3"
+    token-types "^2.0.0"
+    typedarray-to-buffer "^3.1.5"
+
 file-uri-to-path@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz#553a7b8446ff6f684359c445f1e37a05dacc33dd"
@@ -4406,6 +4913,11 @@ follow-redirects@^1.0.0, follow-redirects@^1.14.4:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.5.tgz#f09a5848981d3c772b5392309778523f8d85c381"
   integrity sha512-wtphSXy7d4/OR+MvIFbCVBDzZ5520qV8XfPklSN5QtxuMUJZ+b0Wnst1e1lCDocfzuCkHqj8k0FpZqO+UIaKNA==
 
+follow-redirects@^1.14.0:
+  version "1.14.6"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.6.tgz#8cfb281bbc035b3c067d6cd975b0f6ade6e855cd"
+  integrity sha512-fhUl5EwSJbbl8AR+uYL2KQDxLkdSjZGR36xy46AO7cOMTrCMON6Sa28FmAnC2tRTDbd/Uuzz3aJBv7EBN7JH8A==
+
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -4446,6 +4958,15 @@ fork-ts-checker-webpack-plugin@^3.1.1:
     semver "^5.6.0"
     tapable "^1.0.0"
     worker-rpc "^0.1.0"
+
+form-data@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-3.0.1.tgz#ebd53791b78356a99af9a300d4282c4d5eb9755f"
+  integrity sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
 
 form-data@~2.3.2:
   version "2.3.3"
@@ -4950,6 +5471,17 @@ http-errors@1.7.2:
     statuses ">= 1.5.0 < 2"
     toidentifier "1.0.0"
 
+http-errors@1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.8.1.tgz#7c3f28577cbc8a207388455dbd62295ed07bd68c"
+  integrity sha512-Kpk9Sm7NmI+RHhnj6OIWDI1d6fIoFAtFt9RLaTMRlg/8w49juAStsrBgp0Dp4OdxdVbRIeKhtCUvoi/RuAhO4g==
+  dependencies:
+    depd "~1.1.2"
+    inherits "2.0.4"
+    setprototypeof "1.2.0"
+    statuses ">= 1.5.0 < 2"
+    toidentifier "1.0.1"
+
 http-errors@~1.6.2:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.6.3.tgz#8b55680bb4be283a0b5bf4ea2e38580be1d9320d"
@@ -5039,7 +5571,7 @@ icss-utils@^4.0.0, icss-utils@^4.1.1:
   dependencies:
     postcss "^7.0.14"
 
-ieee754@^1.1.4:
+ieee754@^1.1.4, ieee754@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
   integrity sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==
@@ -5500,7 +6032,7 @@ is-symbol@^1.0.2, is-symbol@^1.0.3:
   dependencies:
     has-symbols "^1.0.2"
 
-is-typedarray@~1.0.0:
+is-typedarray@^1.0.0, is-typedarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
   integrity sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
@@ -6795,6 +7327,11 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+peek-readable@^4.0.1:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/peek-readable/-/peek-readable-4.0.2.tgz#a5cb847e347d3eccdc37642c82d2b4155c1ab8af"
+  integrity sha512-9fMaz6zoxw9ypO1KZy5RDJgSupEtu0Q+g/OqqsVHX3rKGR8qehRLYzsFARZ4bVvdvfknKiXvuDbkMnO1g6cRpQ==
+
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
@@ -7275,6 +7812,11 @@ promise-inflight@^1.0.1:
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
 
+promise-polyfill@^8.1.3:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.2.1.tgz#1fa955b325bee4f6b8a4311e18148d4e5b46d254"
+  integrity sha512-3p9zj0cEHbp7NVUxEYUWjQlffXqnXaZIMPkAO7HhFh8u5636xLRDHOUo2vpWSK0T2mqm6fKLXYn1KP6PAZ2gKg==
+
 proxy-addr@~2.0.5:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-2.0.7.tgz#f19fe69ceab311eeb94b42e70e8c2070f9ba1025"
@@ -7360,6 +7902,11 @@ qs@6.7.0:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
+qs@6.9.6:
+  version "6.9.6"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.6.tgz#26ed3c8243a431b2924aca84cc90471f35d5a0ee"
+  integrity sha512-TIRk4aqYLNoJUbd+g2lEdz5kLWIuTMRagAXxl78Q0RiVjAOugHmeKNGdd3cwo/ktpf9aL9epCfFqWDEKysUlLQ==
+
 qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
@@ -7423,6 +7970,16 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+raw-body@2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.4.2.tgz#baf3e9c21eebced59dd6533ac872b71f7b61cb32"
+  integrity sha512-RPMAFUJP19WIet/99ngh6Iv8fzAbqum4Li7AD6DtGaW2RpMB/11xDoalPiJMTbu6I3hkbMVkATvZrqb9EEqeeQ==
+  dependencies:
+    bytes "3.1.1"
+    http-errors "1.8.1"
+    iconv-lite "0.4.24"
+    unpipe "1.0.0"
+
 read-pkg@^5.1.1:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/read-pkg/-/read-pkg-5.2.0.tgz#7bf295438ca5a33e56cd30e053b34ee7250c93cc"
@@ -7454,6 +8011,11 @@ readable-stream@^3.0.6, readable-stream@^3.6.0:
     inherits "^2.0.3"
     string_decoder "^1.1.1"
     util-deprecate "^1.0.1"
+
+readable-web-to-node-stream@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/readable-web-to-node-stream/-/readable-web-to-node-stream-2.0.0.tgz#751e632f466552ac0d5c440cc01470352f93c4b7"
+  integrity sha512-+oZJurc4hXpaaqsN68GoZGQAQIA3qr09Or4fqEsargABnbe5Aau8hFn6ISVleT3cpY/0n/8drn7huyyEvTbghA==
 
 readdirp@^2.2.1:
   version "2.2.1"
@@ -7921,6 +8483,11 @@ setprototypeof@1.1.1:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.1.tgz#7e95acb24aa92f5885e0abef5ba131330d4ae683"
   integrity sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEbHMOxEZ1lqVRYP2OAw==
 
+setprototypeof@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.2.0.tgz#66c9a24a73f9fc28cbe66b09fed3d33dcaf1b424"
+  integrity sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==
+
 sha.js@^2.4.0, sha.js@^2.4.8:
   version "2.4.11"
   resolved "https://registry.yarnpkg.com/sha.js/-/sha.js-2.4.11.tgz#37a5cf0b81ecbc6943de109ba2960d1b26584ae7"
@@ -8366,6 +8933,14 @@ strip-json-comments@^3.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
+strtok3@^6.0.3:
+  version "6.2.4"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-6.2.4.tgz#302aea64c0fa25d12a0385069ba66253fdc38a81"
+  integrity sha512-GO8IcFF9GmFDvqduIspUBwCzCbqzegyVKIsSymcMgiZKeCfrN9SowtUoi8+b59WZMAjIzVZic/Ft97+pynR3Iw==
+  dependencies:
+    "@tokenizer/token" "^0.3.0"
+    peek-readable "^4.0.1"
+
 stylehacks@^4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/stylehacks/-/stylehacks-4.0.3.tgz#6718fcaf4d1e07d8a1318690881e8d96726a71d5"
@@ -8527,6 +9102,11 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
+tiny-sha256@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/tiny-sha256/-/tiny-sha256-1.0.2.tgz#3b20a75f77097dcec1af513f5189c26ec2f54992"
+  integrity sha1-OyCnX3cJfc7Br1E/UYnCbsL1SZI=
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
@@ -8581,6 +9161,19 @@ toidentifier@1.0.0:
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
 
+toidentifier@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.1.tgz#3be34321a88a820ed1bd80dfaa33e479fbb8dd35"
+  integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
+
+token-types@^2.0.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/token-types/-/token-types-2.1.1.tgz#bd585d64902aaf720b8979d257b4b850b4d45c45"
+  integrity sha512-wnQcqlreS6VjthyHO3Y/kpK/emflxDBNhlNUPfh7wE39KnuDdOituXomIbyI79vBtF0Ninpkh72mcuRHo+RG3Q==
+  dependencies:
+    "@tokenizer/token" "^0.1.1"
+    ieee754 "^1.2.1"
+
 toposort@^1.0.0:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/toposort/-/toposort-1.0.7.tgz#2e68442d9f64ec720b8cc89e6443ac6caa950029"
@@ -8629,6 +9222,11 @@ tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
+
+tslib@^2.3.0:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tslint@^5.20.1:
   version "5.20.1"
@@ -8709,6 +9307,13 @@ type-is@~1.6.17, type-is@~1.6.18:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.24"
+
+typedarray-to-buffer@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/typedarray-to-buffer/-/typedarray-to-buffer-3.1.5.tgz#a97ee7a9ff42691b9f783ff1bc5112fe3fca9080"
+  integrity sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
+  dependencies:
+    is-typedarray "^1.0.0"
 
 typedarray@^0.0.6:
   version "0.0.6"
@@ -9207,6 +9812,11 @@ websocket-extensions@>=0.1.1:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.4.tgz#7f8473bc839dfd87608adb95d7eb075211578a42"
   integrity sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
+
+whatwg-fetch@^3.0.0:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
+  integrity sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"
