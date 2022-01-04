@@ -5,7 +5,7 @@ class ImprintsController < ApplicationController
   def create
     activation_key = params[:activation_key]
     stamp_id = params[:stamp_id]
-    user_id = current_user.id
+    user_id = 1
     stamp = Stamp.find(stamp_id)
     if stamp.activation_key != activation_key
       return render json: { error: 'Activation key is invalid.' }, status: :bad_request
@@ -16,9 +16,7 @@ class ImprintsController < ApplicationController
       @imprint = Imprint.create!(user_id: user_id, stamp_id: stamp_id)
       count = Imprint.where(user_id: user_id).count
       if count >= 7
-        if !_send_award
-          return render json: { error: 'Error at sending message' }, status: :internal_server_error
-        end
+        puts "send coupon"
       end
     end
   end
@@ -29,7 +27,7 @@ class ImprintsController < ApplicationController
     }
   end
 
-  def _send_award
+  def send_coupon(uid)
     message1 = {
       type: "text",
       text: "七福神コンプリートおめでとうございます🎉"
@@ -65,7 +63,6 @@ class ImprintsController < ApplicationController
         }
       }
     }
-    uid = current_user.uid
     response = client.push_message(uid, [message1, message2])
     response.code.to_i == 200
   end

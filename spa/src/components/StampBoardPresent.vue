@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="stamp-app">
     <div v-show="showOverlap" class="overlap">
       <div class="stamp-desc">↑スタンプを押してね</div>
     </div>
@@ -158,7 +158,7 @@ export default defineComponent({
 })
 </script>
 <style scoped lang="sass">
-#app
+#stamp-app
   position: relative
   h1
     text-align: center
