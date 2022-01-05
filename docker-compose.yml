@@ -14,7 +14,7 @@ services:
     #command: "tail -f /dev/null"
     volumes:
       - .:/myapp
-      - public:/myapp/public
+      - /myapp/public/
     environment:
       - DB_PASSWORD=${DB_PASSWORD}
       - LIFF_ID=${LIFF_ID}
@@ -28,5 +28,3 @@ services:
       - "8888:8888"
     depends_on:
       - db
-volumes:
-  public:
