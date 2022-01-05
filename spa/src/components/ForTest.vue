@@ -11,15 +11,22 @@
       <a href="/?sid=5&act_key=B889E58D-22AF-4192-A13A-6F3DD2592115">恵比寿</a>
       <a href="/?sid=6&act_key=1257CC71-2100-4F6D-B2EA-CE22F85952D3">大黒天</a>
       <a href="/?sid=7&act_key=9FB2BF2D-EE62-4C2C-B78D-C83F1C75901D">毘沙門天</a>
+      <a href="javascript:void(0)" @click="clear">クリア</a>
     </div>
   </div>
 </template>
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
+import api from '@/api/api'
+
 export default defineComponent({
   setup () {
     const showContent = ref(false)
-    return { showContent }
+    const clear = async () => {
+      await api.clear()
+      location.href = '/'
+    }
+    return { showContent, clear }
   }
 })
 </script>

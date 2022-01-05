@@ -18,4 +18,11 @@ class ImprintsController < ApplicationController
       end
     end
   end
+  def clear
+    user_id = 1
+    imprints = Imprint.where(user_id: user_id)
+    imprints.each do |imprint|
+      imprint.destroy!
+    end
+  end
 end

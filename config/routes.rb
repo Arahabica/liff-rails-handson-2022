@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   scope '/api' do
     scope format: 'json' do
       resources :stamps, only: [:index, :show]
-    end
-    scope format: 'json' do
       resources :imprints, only: [:create]
+      delete 'imprints', to: 'imprints#clear'
     end
   end
 end
