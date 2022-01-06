@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: Home,
     meta: { title: '鎌倉七福神巡り' }
-  },
+  }
 ]
 
 const router = createRouter({
