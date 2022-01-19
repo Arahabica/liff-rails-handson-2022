@@ -1,13 +1,13 @@
 class StampsController < ApplicationController
 
   def index
-    user_id = 1
+    user_id = current_user.id
     @stamps = Stamp.all
     @imprinted_stamp_ids = Imprint.where(user_id: user_id).map{ |t| t.stamp_id }
   end
   def show
     activation_key = request.query_parameters[:act_key]
-    user_id = 1
+    user_id = current_user.id
     stamp_id = params[:id]
     @stamp = Stamp.find(stamp_id)
     @imprinted = Imprint.where(user_id: user_id, stamp_id: stamp_id).any?

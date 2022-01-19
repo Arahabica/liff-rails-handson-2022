@@ -74,11 +74,9 @@ export default class ApiClient {
   }
 
   _getRequestHeaders (): AuthHeaders {
-    const headers = {
-      'access-token': '',
-      uid: '',
-      client: '',
-      expiry: ''
+    const headers = this.authStorage.get()
+    if (!headers) {
+      throw new Error('Not Authorized.')
     }
     return { ...headers, 'Content-Type': 'application/json' }
   }
